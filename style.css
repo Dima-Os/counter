@@ -1,0 +1,37 @@
+body {
+    background-color: antiquewhite;}
+.section   {
+    counter-reset: section-counter ;   
+}
+.article{
+    counter-increment: section-counter;  
+}
+
+.article h2::after{
+    margin-left: 10px;
+    content: counter(section-counter, upper-roman);
+}
+.sub-article{
+    counter-reset: sub-article-counter;
+}
+.sub-article-item{
+    counter-increment: sub-article-counter;
+    counter-reset: p-counter;
+}
+.sub-article-item p{
+    counter-increment: p-counter;
+}
+.sub-article-item p::before{
+    content: counter(p-counter);
+    margin-right: 25px;
+}
+.sub-article-item h3::after{
+    content: counter(sub-article-counter);
+    margin-left: 15px;
+}
+
+.wrapper{
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10px 20px 10px 15px;
+}
